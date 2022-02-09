@@ -8,6 +8,8 @@
     <modules>
         <module>ClassModeling</module>
         <module>interfacecompositioninheritance</module>
+        <module>ShapesPerimeters</module>
+        <module>Factorizer</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Factorizer;
+package refactorFactorizer;
 
 import java.util.Scanner;
 
@@ -11,26 +11,16 @@ import java.util.Scanner;
  * @author fer
  */
 public class Factorizer {
-    public static void main(String[] args) {
-        
-     int pick = askPrompt();
-     int sum = calculateFactors(pick);
-     calculatePerfect(pick, sum);
-     if (isPrime(pick)) {  
-           System.out.println(pick+ " is a prime number");  
-       } else {  
-           System.out.println(pick + " is not a prime number");  
-       }  
-}
+
     
-    public static int askPrompt(){
+    public  int askPrompt(){
      System.out.println("what number would you like to factor? ");
      Scanner inputReader = new Scanner(System.in);
      int number = Integer.parseInt(inputReader.nextLine());
      System.out.println("The factors of 6 are: ");
      return number;
     }
-    public static int calculateFactors(int number){
+    public  int calculateFactors(int number){
      int count =0;
      int sum =0; 
     
@@ -47,7 +37,7 @@ public class Factorizer {
      return sum;
      
     }
-     public static void calculatePerfect(int number,int sum){
+     public  void calculatePerfect(int number,int sum){
      if((sum-number) == number){
          System.out.println( number +" is a perfect number");
      }
@@ -58,7 +48,7 @@ public class Factorizer {
      
     }
     
-    public static boolean isPrime(int n) {  
+    public  boolean isPrime(int n) {  
        if (n <= 1) {  
            return false;  
        }  
@@ -70,3 +60,4 @@ public class Factorizer {
        return true;  
    }  
 }
+
