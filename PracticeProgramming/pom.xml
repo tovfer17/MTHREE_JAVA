@@ -15,6 +15,9 @@
         <module>Submissions</module>
         <module>UserIOclassLab</module>
         <module>StateCapitals2</module>
+        <module>AgileApproachConsoleCrudApp</module>
+        <module>ClassRoster</module>
+        <module>DVDLibrary</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

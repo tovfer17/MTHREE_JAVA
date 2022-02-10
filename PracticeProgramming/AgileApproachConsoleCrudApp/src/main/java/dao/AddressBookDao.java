@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package StateCapitals2;
+package dao;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -15,10 +15,9 @@ import java.util.Scanner;
  *
  * @author fer
  */
-public class StateCapital2  {
-    
-    final static String filePath = "/Users/fer/Documents/Netbeans/mthree_Java/PracticeProgramming/StateCapitals2/src/main/java/StateCapitals2/StateCapitals.txt"; 
-	public static void main(String[] args) throws Exception {	
+public class AddressBookDao {
+    final static String filePath = "/Users/fer/Documents/Netbeans/mthree_Java/PracticeProgramming/AgileApproachConsoleCrudApp/src/main/java/addressBook.txt";
+		
 		// Create a scanner
 		Scanner input = new Scanner(System.in);
 
@@ -33,9 +32,9 @@ public class StateCapital2  {
                     System.out.println(entry.getKey() + " : "
                                        + entry.getValue());
                 }
-	}
+	
 
-
+	
 	public static Map<String, String> HashMapFromTextFile() {
 		Map<String, String> map
             = new HashMap<String, String>();
@@ -58,13 +57,13 @@ public class StateCapital2  {
                 String[] parts = line.split("::");
   
                 // first part is name, second is number
-                String state = parts[0].trim();
-                String capital = parts[1].trim();
+                String name = parts[0].trim();
+                String address = parts[1].trim();
   
                 // put name, number in HashMap if they are
                 // not empty
-                if (!state.equals("") && !capital.equals(""))
-                    map.put(state, capital);
+                if (!name.equals("") && !address.equals(""))
+                    map.put(name, address);
             }
         }
         catch (Exception e) {
