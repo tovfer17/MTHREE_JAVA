@@ -2,24 +2,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ft.com.mthree.shapesperimeters;
+package shapesperimeters;
 
-import shapesPerimeters.Shape;
+import shapesperimeters.Shape;
 
 /**
  *
  * @author fer
  */
-public class Rectangle extends Shape {
-    @Override
+public class Square extends Shape{
+     @Override
     public double getArea(){
-        return getLength()*getWidth();
+        return getWidth()*getWidth();
         
     }
 
     @Override
     public double getPerimeter() {
-       return 2*(getLength()+getWidth());
+       return 4*(getWidth());
     }
-    
 }

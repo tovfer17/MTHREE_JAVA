@@ -12,6 +12,8 @@
         <module>Factorizer</module>
         <module>Foundations</module>
         <module>../Submissions</module>
+        <module>Submissions</module>
+        <module>UserIOclassLab</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
