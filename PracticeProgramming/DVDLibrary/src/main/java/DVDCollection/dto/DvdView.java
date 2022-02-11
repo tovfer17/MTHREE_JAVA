@@ -28,6 +28,21 @@ public class DvdView {
 
         return io.readInt("Please select from the above choices.", 1, 10);
     }
+   
+    public int timesMenuAndGetSelection(){
+       io.print("How many times do you want to add,edit, or delete?");
+       return io.readInt("Please pick how many times you would like to complete the same action? ");
+       
+    }
+    
+    public int manyMenuAndGetSelection(){
+       io.print("How many times do you want to add,edit, or delete?");
+       io.print("1. Add mutiple DVDS");
+       io.print("2. Edit mutiple DVDS");
+       io.print("3. Remove mutiple DVDS");
+       return io.readInt("Please select from the above choices.", 1, 3);
+       
+    }
     
     public Dvd getNewDvdInfo() {
     String title = io.readString("Please enter title");
@@ -54,6 +69,7 @@ public class DvdView {
             "DVD successfully added.  Please hit enter to continue");
 }
     public void displayDvdList(List<Dvd> dvdList) {
+    io.print("Here are all of the DVDs in your collection: ");
     for (Dvd currentDvd : dvdList) {
         String dvdInfo = String.format("#%s : %s,%s,%s,%s,%s",
               currentDvd.getTitle(),
@@ -81,6 +97,7 @@ public String getTitleChoice() {
 
 public void displayDvd(Dvd dvd) {
     if (dvd != null) {
+        io.print("Here is the information about that DVD: ");
         io.print(dvd.getTitle());
         io.print(dvd.getReleaseDate());
         io.print(dvd.getMpaaRating());
@@ -115,4 +132,44 @@ public void displayUnknownCommandBanner() {
     io.print("Unknown Command!!!");
 }
 
+public void displayEditDvdBanner() {
+    io.print("=== Edit DVD ===");
 }
+
+public void displayEditedResult(Dvd dvdRecord){
+    if(dvdRecord != null){
+      io.print("DVD successfully edited.");
+    }else{
+      io.print("No such DVD.");
+    }
+    io.readString("Please hit enter to continue.");
+
+}
+
+public void displaySearchDvdBanner() {
+    io.print("=== Search DVD ===");
+}
+public void displaySearchResult(List<Dvd> dvdList,Dvd dvd){
+     if (!(dvdList.contains(dvd))) {
+                throw new IllegalArgumentException("There is no movie with that title: '" + dvd+ "'");
+            }
+     else{
+         io.print("The DVD "+ dvd.getTitle() + " was found! ");
+         displayDvd(dvd);
+     }
+    }
+
+public void displaySaveFileResults(){
+    
+}
+
+    
+}
+
+
+
+
+
+
+
+

@@ -23,4 +23,17 @@ public interface DvdDao {
 
 
     Dvd removeDvd(String title);
+    
+    Dvd editDvd(String title, Dvd dvd);
+    
+
+    
+    String saveFile(List<Dvd> dvdList);
+    
+    String loadFile(List<Dvd> dvdList);
+
+
+   
+
+    
 }
