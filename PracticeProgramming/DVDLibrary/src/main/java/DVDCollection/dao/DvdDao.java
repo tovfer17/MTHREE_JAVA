@@ -30,7 +30,7 @@ public interface DvdDao {
     
     String saveFile(List<Dvd> dvdList);
     
-    String loadFile(List<Dvd> dvdList);
+    String loadFile();
 
 
    

@@ -159,8 +159,12 @@ public void displaySearchResult(List<Dvd> dvdList,Dvd dvd){
      }
     }
 
-public void displaySaveFileResults(){
-    
+public void displaySaveFileResults(String result){
+    io.print("=== Saved File Results, also check text file ===");
+}
+
+public void displayLoadFileResults(String result){
+    io.print("=== Loaded File Results from text file ===");
 }
 
     

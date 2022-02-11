@@ -62,7 +62,7 @@ public class DvdDaoFileImpl implements DvdDao {
 
     @Override
     public String saveFile(List<Dvd> save) {
-        String dvdInfo = null;
+        String dvdInfo = "" ;
         String fileName ="/Users/fer/Documents/Netbeans/mthree_Java/PracticeProgramming/DVDLibrary/me.txt";
         for (Dvd currentDvd : save) {
             dvdInfo += String.format("%s,%s,%s,%s,%s,%s",
@@ -84,7 +84,6 @@ public class DvdDaoFileImpl implements DvdDao {
                 
                 pw.println(dvdInfo);
                 pw.close();
-                System.out.println("Try passed!");
             } catch (IOException ex) {
                 Logger.getLogger(DvdDaoFileImpl.class.getName()).log(Level.SEVERE, null, ex);
                 return "Data save failed!";
@@ -95,10 +94,12 @@ public class DvdDaoFileImpl implements DvdDao {
     }
 
     @Override
-    public String loadFile(List<Dvd> dvdList) {
+    public String loadFile() {
         BufferedReader br = null;
         String fileName ="/Users/fer/Documents/Netbeans/mthree_Java/PracticeProgramming/DVDLibrary/me.txt";
-  
+        
+        
+        
         try {
   
             // create file object
@@ -123,10 +124,9 @@ public class DvdDaoFileImpl implements DvdDao {
                 String studio = parts[4].trim();
                 String userRating = parts[5].trim();
                 
-                
-           
-                
-  
+                for (int i =0; i <=parts.length-1; i++){
+                System.out.println("DVD Title:" + title + releaseDate);
+                }
               
             }
         }
@@ -145,7 +145,7 @@ public class DvdDaoFileImpl implements DvdDao {
             }
         }
   
-        return map;
+       return "file";
     }
 
     
