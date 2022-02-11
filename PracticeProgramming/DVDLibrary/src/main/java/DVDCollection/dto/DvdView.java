@@ -30,7 +30,6 @@ public class DvdView {
     }
    
     public int timesMenuAndGetSelection(){
-       io.print("How many times do you want to add,edit, or delete?");
        return io.readInt("Please pick how many times you would like to complete the same action? ");
        
     }

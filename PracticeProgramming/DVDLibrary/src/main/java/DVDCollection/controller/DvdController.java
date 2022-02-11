@@ -137,15 +137,17 @@ public class DvdController {
     
     }
     private void loadFile(){
-        String result = dao.loadFile();
+      String result = dao.loadFile();
       view.displayLoadFileResults(result);
       
     }
+    
      private void saveFile(){
         List<Dvd> dvdList = dao.getAllDvds();
         String result = dao.saveFile(dvdList);
         view.displaySaveFileResults(result);
      }
+
     private void unknownCommand() {
     view.displayUnknownCommandBanner();
     }

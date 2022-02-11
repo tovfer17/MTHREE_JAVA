@@ -5,9 +5,7 @@
 package DVDCollection.dao;
 
 import DVDCollection.dto.Dvd;
-import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -19,6 +17,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -31,7 +30,7 @@ public class DvdDaoFileImpl implements DvdDao {
      private Map<String, Dvd> dvds = new HashMap<>();
      
     @Override
-    public Dvd addDvd(String title, Dvd dvd) { //dao.addDvd(newDvd.getTitle(), newDvd);
+    public Dvd addDvd(String title, Dvd dvd) { 
        Dvd prevDvd = dvds.put(title, dvd);
        return prevDvd;
     }
@@ -62,8 +61,10 @@ public class DvdDaoFileImpl implements DvdDao {
 
     @Override
     public String saveFile(List<Dvd> save) {
+  
         String dvdInfo = "" ;
-        String fileName ="/Users/fer/Documents/Netbeans/mthree_Java/PracticeProgramming/DVDLibrary/me.txt";
+        String fileName ="/Users/fer/Documents/Netbeans/mthree_Java/PracticeProgramming/DVDLibrary/dvd1.txt";
+          
         for (Dvd currentDvd : save) {
             dvdInfo += String.format("%s,%s,%s,%s,%s,%s",
               currentDvd.getTitle(),
@@ -75,10 +76,10 @@ public class DvdDaoFileImpl implements DvdDao {
               
         );
             dvdInfo += "\n";
-            System.out.println(dvdInfo);
-                 
+           // System.out.println(dvdInfo);
+                
         }
-        try {
+          try {
                 FileWriter fos = new FileWriter(fileName);
                 PrintWriter pw = new PrintWriter(fos);
                 
@@ -96,18 +97,16 @@ public class DvdDaoFileImpl implements DvdDao {
     @Override
     public String loadFile() {
         BufferedReader br = null;
-        String fileName ="/Users/fer/Documents/Netbeans/mthree_Java/PracticeProgramming/DVDLibrary/me.txt";
-        
-        
+        String fileName ="/Users/fer/Documents/Netbeans/mthree_Java/PracticeProgramming/DVDLibrary/dvd1.txt";
         
         try {
   
-            // create file object
+           // create file object
             File file = new File(fileName);
   
             // create BufferedReader object from the File
             br = new BufferedReader(new FileReader(file));
-  
+            
             String line = null;
   
             // read file line by line
@@ -115,8 +114,8 @@ public class DvdDaoFileImpl implements DvdDao {
   
                 // split the line by :
                 String[] parts = line.split(",");
-  
-                // first part is name, second is number
+                
+             
                 String title = parts[0].trim();
                 String releaseDate = parts[1].trim();
                 String mpaaRating = parts[2].trim();
@@ -124,11 +123,10 @@ public class DvdDaoFileImpl implements DvdDao {
                 String studio = parts[4].trim();
                 String userRating = parts[5].trim();
                 
-                for (int i =0; i <=parts.length-1; i++){
-                System.out.println("DVD Title:" + title + releaseDate);
-                }
-              
+                System.out.println("DVD Title:" + title + " Release Date:" +releaseDate+ " MPAA Rating: "+ mpaaRating+ " Director's Name: "+directorName + " Studio: " +studio + " User Rating: "+userRating);
             }
+            
+            
         }
         catch (Exception e) {
             e.printStackTrace();
